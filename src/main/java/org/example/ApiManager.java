@@ -42,9 +42,11 @@ public class ApiManager {
         CloseableHttpResponse response = client.execute(get);
         String response1 = EntityUtils.toString(response.getEntity());
         Response response2 = new ObjectMapper().readValue(response1, Response.class);
+        int counter = 1;
         for (int i = 0; i < response2.getTasks().size(); i++) {
             if (!response2.getTasks().get(i).isDone()) {
-                System.out.println((i + 1) + ": " + response2.getTasks().get(i).getTitle());
+                System.out.println((counter) + ": " + response2.getTasks().get(i).getTitle());
+                counter++;
             }
         }
         System.out.println("\n");
