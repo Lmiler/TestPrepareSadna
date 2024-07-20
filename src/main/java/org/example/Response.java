@@ -10,7 +10,7 @@ public class Response {
     private String errorCode;
     private List<Task> tasks;
 
-    public boolean getSuccess() {
+    public boolean isSuccess() {
         return success;
     }
 
